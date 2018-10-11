@@ -5,7 +5,7 @@ r = 0
 b = 0
 g = 0
 while cont != "c":
-    cont = raw_input("r for red b for blue g for green c to stop :")
+    cont = raw_input("r for red;\n b for blue;\n g for green;\n o for off;\n c to stop :")
     if cont == "r" and r != 1:
         pi.set_PWM_dutycycle(17, 255)
         r = 1
@@ -24,6 +24,10 @@ while cont != "c":
     elif cont == "g" and g == 1:
         pi.set_PWM_dutycycle(22, 0)
         g = 0
+    elif cont == "o":
+        pi.set_PWM_dutycycle(17, 0)
+        pi.set_PWM_dutycycle(24, 0)
+        pi.set_PWM_dutycycle(22, 0)
     elif cont == "c":
         print("stopping...")
         pi.set_PWM_dutycycle(17, 0)
