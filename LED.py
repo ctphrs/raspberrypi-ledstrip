@@ -16,13 +16,13 @@ while cont != "c":
         pi.set_PWM_dutycycle(22, 255)
         g = 1
     elif cont == "r" and r == 1:
-        pi.set_PWM_dutycycle(17, 255)
+        pi.set_PWM_dutycycle(17, 0)
         r = 0
     elif cont == "b" and b == 1:
-        pi.set_PWM_dutycycle(24, 255)
+        pi.set_PWM_dutycycle(24, 0)
         b = 0
     elif cont == "g" and g == 1:
-        pi.set_PWM_dutycycle(22, 255)
+        pi.set_PWM_dutycycle(22, 0)
         g = 0
     elif cont == "c":
         print("stopping...")
