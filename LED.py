@@ -1,6 +1,9 @@
 import pigpio
 pi = pigpio.pi()
 cont = ""
+r = 0
+b = 0
+g = 0
 while cont != "c":
     cont = raw_input("r for red b for blue g for green c to stop :")
     if cont == "r" and r != 1:
