@@ -2,13 +2,32 @@ import pigpio
 pi = pigpio.pi()
 cont = ""
 while cont != "c":
-    cont = input("r for red b for blue g for green c to stop :")
-    if cont == "r":
+    cont = raw_input("r for red b for blue g for green c to stop :")
+    if cont == "r" and r != 1:
         pi.set_PWM_dutycycle(17, 255)
-    elif cont == "b":
+        r = 1
+    elif cont == "b" and b != 1:
         pi.set_PWM_dutycycle(24, 255)
-    elif cont == "g":
+        b = 1
+    elif cont == "g" and g != 1:
+        pi.set_PWM_dutycycle(22, 255)
+        g = 1
+    elif cont == "r" and r == 1:
+        pi.set_PWM_dutycycle(17, 255)
+        r = 0
+    elif cont == "b" and b == 1:
         pi.set_PWM_dutycycle(24, 255)
+        b = 0
+    elif cont == "g" and g == 1:
+        pi.set_PWM_dutycycle(22, 255)
+        g = 0
+    elif cont == "c":
+        print("stopping...")
+        pi.set_PWM_dutycycle(17, 0)
+        pi.set_PWM_dutycycle(24, 0)
+        pi.set_PWM_dutycycle(22, 0)
     else:
         print("unknown input")
+
+
 pi.stop()
