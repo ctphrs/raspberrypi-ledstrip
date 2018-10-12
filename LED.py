@@ -28,6 +28,9 @@ while cont != "c":
         pi.set_PWM_dutycycle(17, 0)
         pi.set_PWM_dutycycle(24, 0)
         pi.set_PWM_dutycycle(22, 0)
+        r = 0
+        g = 0
+        b = 0
     elif cont == "c":
         print("stopping...")
         pi.set_PWM_dutycycle(17, 0)
